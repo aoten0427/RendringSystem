@@ -186,41 +186,77 @@
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Base\Camera\Camera.h" />
+    <ClInclude Include="Base\Camera\DebugCamera.h" />
+    <ClInclude Include="Base\CommonResources.h" />
+    <ClInclude Include="Base\Component\Component.h" />
+    <ClInclude Include="Base\Component\Transform\Transform.h" />
+    <ClInclude Include="Base\Event\EventManager.h" />
+    <ClInclude Include="Base\Event\IObserver.h" />
+    <ClInclude Include="Base\Event\ISubject.h" />
+    <ClInclude Include="Base\Event\Observer.h" />
+    <ClInclude Include="Base\Event\Subject.h" />
+    <ClInclude Include="Base\Mylib\DebugString.h" />
+    <ClInclude Include="Base\Mylib\InputManager.h" />
+    <ClInclude Include="Base\Mylib\Singleton.h" />
+    <ClInclude Include="Base\Object\Object.h" />
+    <ClInclude Include="Base\Object\UnbreakableManager.h" />
+    <ClInclude Include="Base\Resources\GameResources.h" />
+    <ClInclude Include="Base\Resources\ReadData.h" />
+    <ClInclude Include="Base\Resources\ShaderManager.h" />
+    <ClInclude Include="Base\Scene\DebugScene.h" />
+    <ClInclude Include="Base\Scene\Scene.h" />
+    <ClInclude Include="Base\Scene\SceneManager.h" />
+    <ClInclude Include="Base\Scene\SceneState.h" />
+    <ClInclude Include="Base\Screen.h" />
     <ClInclude Include="DeviceResources.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Game\CommonResources.h" />
-    <ClInclude Include="Game\Mylib\DebugCamera.h" />
-    <ClInclude Include="Game\Mylib\DebugString.h" />
-    <ClInclude Include="Game\Mylib\GameResources.h" />
-    <ClInclude Include="Game\Mylib\InputManager.h" />
-    <ClInclude Include="Game\Mylib\Model3D.h" />
-    <ClInclude Include="Game\Mylib\ReadData.h" />
-    <ClInclude Include="Game\Mylib\ShaderManager.h" />
-    <ClInclude Include="Game\Mylib\Singleton.h" />
-    <ClInclude Include="Game\Scene\IScene.h" />
-    <ClInclude Include="Game\Scene\PlayScene.h" />
-    <ClInclude Include="Game\Scene\SceneManager.h" />
-    <ClInclude Include="Game\Scene\TitleScene.h" />
-    <ClInclude Include="Game\Screen.h" />
+    <ClInclude Include="Libraries\imgui\imconfig.h" />
+    <ClInclude Include="Libraries\imgui\imgui.h" />
+    <ClInclude Include="Libraries\imgui\imguiJapanese.h" />
+    <ClInclude Include="Libraries\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="Libraries\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="Libraries\imgui\imgui_internal.h" />
+    <ClInclude Include="Libraries\imgui\imstb_rectpack.h" />
+    <ClInclude Include="Libraries\imgui\imstb_textedit.h" />
+    <ClInclude Include="Libraries\imgui\imstb_truetype.h" />
     <ClInclude Include="Libraries\Microsoft\DebugDraw.h" />
     <ClInclude Include="Libraries\MyLib\MemoryLeakDetector.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StepTimer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Base\Camera\Camera.cpp" />
+    <ClCompile Include="Base\Camera\DebugCamera.cpp" />
+    <ClCompile Include="Base\CommonResources.cpp" />
+    <ClCompile Include="Base\Component\Component.cpp" />
+    <ClCompile Include="Base\Component\Transform\Transform.cpp" />
+    <ClCompile Include="Base\Event\EventManager.cpp" />
+    <ClCompile Include="Base\Event\Observer.cpp" />
+    <ClCompile Include="Base\Event\Subject.cpp" />
+    <ClCompile Include="Base\Mylib\DebugString.cpp" />
+    <ClCompile Include="Base\Mylib\InputManager.cpp" />
+    <ClCompile Include="Base\Mylib\Singleton.cpp" />
+    <ClCompile Include="Base\Object\Object.cpp" />
+    <ClCompile Include="Base\Object\UnbreakableManager.cpp" />
+    <ClCompile Include="Base\Resources\GameResources.cpp" />
+    <ClCompile Include="Base\Resources\ShaderManager.cpp" />
+    <ClCompile Include="Base\Scene\DebugScene.cpp" />
+    <ClCompile Include="Base\Scene\Scene.cpp" />
+    <ClCompile Include="Base\Scene\SceneManager.cpp" />
+    <ClCompile Include="Base\Scene\SceneState.cpp" />
     <ClCompile Include="DeviceResources.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Game\CommonResources.cpp" />
-    <ClCompile Include="Game\Mylib\DebugCamera.cpp" />
-    <ClCompile Include="Game\Mylib\DebugString.cpp" />
-    <ClCompile Include="Game\Mylib\GameResources.cpp" />
-    <ClCompile Include="Game\Mylib\InputManager.cpp" />
-    <ClCompile Include="Game\Mylib\Model3D.cpp" />
-    <ClCompile Include="Game\Mylib\ShaderManager.cpp" />
-    <ClCompile Include="Game\Mylib\Singleton.cpp" />
-    <ClCompile Include="Game\Scene\PlayScene.cpp" />
-    <ClCompile Include="Game\Scene\SceneManager.cpp" />
-    <ClCompile Include="Game\Scene\TitleScene.cpp" />
+    <ClCompile Include="Libraries\imgui\imgui.cpp" />
+    <ClCompile Include="Libraries\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Libraries\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Libraries\imgui\imgui_impl_win32.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\imgui_ja_gryph_ranges.cpp" />
+    <ClCompile Include="Libraries\imgui\imgui_tables.cpp" />
+    <ClCompile Include="Libraries\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Libraries\Microsoft\DebugDraw.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -240,18 +276,7 @@
     <Manifest Include="settings.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Game\Shader\Model.hlsli" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Game\Shader\ModelPS.hlsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
-    </FxCompile>
-    <FxCompile Include="Game\Shader\ModelVS.hlsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
-    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,12 +8,10 @@
 #include "StepTimer.h"
 
 // ÅöincludeÇÃí«ãLÅö
-#include "Game/CommonResources.h"
-#include "Game/Scene/IScene.h"
-#include "Game/Scene/SceneManager.h"
-#include "Game/Mylib/InputManager.h"
-#include "Game/Mylib/DebugString.h"
-
+#include "Base/CommonResources.h"
+#include "Base/Mylib/InputManager.h"
+#include "Base/Mylib/DebugString.h"
+#include "Base/Scene/SceneManager.h"
 
 // A basic game implementation that creates a D3D11 device and
 // provides a game loop.
@@ -22,7 +20,7 @@ class Game final : public DX::IDeviceNotify
 public:
 
     Game() noexcept(false);
-    ~Game() = default;
+    ~Game();
 
     Game(Game&&) = default;
     Game& operator= (Game&&) = default;

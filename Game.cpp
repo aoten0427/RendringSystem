@@ -4,9 +4,12 @@
 
 #include "pch.h"
 #include "Game.h"
-#include "Game/Mylib/GameResources.h"
-#include "Game/Screen.h"
-#include "Game/Scene/SceneManager.h"
+#include "Base/Resources/GameResources.h"
+#include "Base/Screen.h"
+#include "Libraries/imgui/imgui.h"
+#include "Libraries/imgui/imgui_impl_dx11.h"
+#include "Libraries/imgui/imgui_impl_win32.h"
+#include "Libraries/imgui/imguiJapanese.h"
 
 extern void ExitGame() noexcept;
 
@@ -29,6 +32,13 @@ Game::Game() noexcept(false)
     //   Add DX::DeviceResources::c_AllowTearing to opt-in to variable rate displays.
     //   Add DX::DeviceResources::c_EnableHDR for HDR10 display.
     m_deviceResources->RegisterDeviceNotify(this);
+}
+
+Game::~Game()
+{
+    ImGui_ImplDX11_Shutdown();
+    ImGui_ImplWin32_Shutdown();
+    ImGui::DestroyContext();
 }
 
 // Initialize the Direct3D resources required to run.
@@ -86,6 +96,17 @@ void Game::Initialize(HWND window, int width, int height)
         m_debugString.get(),
         m_inputManager.get()
     );
+
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO();
+    ImGui_ImplWin32_Init(window);
+    ImGui_ImplDX11_Init(device, context);
+    io.Fonts->AddFontFromFileTTF("Resources\\Fonts\\NotoSansJP-VariableFont_wght.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
+    io.Fonts->Build();
+
+    ImGui::StyleColorsDark();
+
 
     // シーンマネージャを初期化する
     m_sceneManager = std::make_unique<SceneManager>();

@@ -8,9 +8,6 @@
       <UniqueIdentifier>1c4a63d8-8be7-4206-8e9b-c5c8bc272bb0</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dds;dlg;fbx;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Game">
-      <UniqueIdentifier>{81e0afe9-ad4e-4f63-95a0-f6d4011481d2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources">
       <UniqueIdentifier>{e07fced4-d323-4665-a6ef-0da58b0f46f4}</UniqueIdentifier>
     </Filter>
@@ -35,14 +32,35 @@
     <Filter Include="Libraries\Microsoft">
       <UniqueIdentifier>{3ad90921-3d35-490e-837c-bc326a24aeed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Scene">
-      <UniqueIdentifier>{644b32a7-7d84-4f61-a3f0-3872a592dcfb}</UniqueIdentifier>
+    <Filter Include="Libraries\imgui">
+      <UniqueIdentifier>{162edda7-4ff5-4180-8f15-7b071d6e053d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Mylib">
-      <UniqueIdentifier>{8ed317c1-2fc4-4911-8aad-3ab31f5d3fad}</UniqueIdentifier>
+    <Filter Include="Base">
+      <UniqueIdentifier>{0b3e1fb6-36d9-40f6-8269-1e50f5b45bd6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Shader">
-      <UniqueIdentifier>{78424a4f-595e-489f-ae96-08243f8a0b6d}</UniqueIdentifier>
+    <Filter Include="Base\Scene">
+      <UniqueIdentifier>{211d34df-355c-4cc3-b2a1-e39f4ac63e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Object">
+      <UniqueIdentifier>{76e50db0-cc8e-4106-9821-459a567930ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Component">
+      <UniqueIdentifier>{c593b5a4-bf6c-4be9-a315-1f48c023ada1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Component\Transform">
+      <UniqueIdentifier>{44004ab6-b044-41be-b0d1-aecbfc1c1b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Mylib">
+      <UniqueIdentifier>{479fff29-b96a-4a98-bfa2-c3b262b0e265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Resources">
+      <UniqueIdentifier>{2d3b70f6-02b4-49b3-8df4-e505bf1da4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Event">
+      <UniqueIdentifier>{205b7939-61e5-4378-b3fa-1840d6e200c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Camera">
+      <UniqueIdentifier>{a84c735d-a03e-4c78-8c7a-b0a2782e98b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,53 +72,107 @@
     <ClInclude Include="DeviceResources.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Game\CommonResources.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="Libraries\Microsoft\DebugDraw.h">
       <Filter>Libraries\Microsoft</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Screen.h">
-      <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Libraries\MyLib\MemoryLeakDetector.h">
       <Filter>Libraries\MyLib</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Scene\IScene.h">
-      <Filter>Game\Scene</Filter>
+    <ClInclude Include="Libraries\imgui\imconfig.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Scene\TitleScene.h">
-      <Filter>Game\Scene</Filter>
+    <ClInclude Include="Libraries\imgui\imgui.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Scene\PlayScene.h">
-      <Filter>Game\Scene</Filter>
+    <ClInclude Include="Libraries\imgui\imgui_impl_dx11.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Scene\SceneManager.h">
-      <Filter>Game\Scene</Filter>
+    <ClInclude Include="Libraries\imgui\imgui_impl_win32.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\GameResources.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Libraries\imgui\imgui_internal.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\ReadData.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Libraries\imgui\imguiJapanese.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\ShaderManager.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Libraries\imgui\imstb_rectpack.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\Singleton.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Libraries\imgui\imstb_textedit.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\DebugCamera.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Libraries\imgui\imstb_truetype.h">
+      <Filter>Libraries\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\DebugString.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Base\Scene\Scene.h">
+      <Filter>Base\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\InputManager.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Base\Scene\SceneManager.h">
+      <Filter>Base\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Mylib\Model3D.h">
-      <Filter>Game\Mylib</Filter>
+    <ClInclude Include="Base\Scene\SceneState.h">
+      <Filter>Base\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Object\Object.h">
+      <Filter>Base\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Component\Component.h">
+      <Filter>Base\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Component\Transform\Transform.h">
+      <Filter>Base\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\CommonResources.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Screen.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Object\UnbreakableManager.h">
+      <Filter>Base\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Mylib\DebugString.h">
+      <Filter>Base\Mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Mylib\InputManager.h">
+      <Filter>Base\Mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Mylib\Singleton.h">
+      <Filter>Base\Mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Resources\GameResources.h">
+      <Filter>Base\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Resources\ReadData.h">
+      <Filter>Base\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Resources\ShaderManager.h">
+      <Filter>Base\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Event\EventManager.h">
+      <Filter>Base\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Event\IObserver.h">
+      <Filter>Base\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Event\ISubject.h">
+      <Filter>Base\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Event\Observer.h">
+      <Filter>Base\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Event\Subject.h">
+      <Filter>Base\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Camera\Camera.h">
+      <Filter>Base\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Camera\DebugCamera.h">
+      <Filter>Base\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Scene\DebugScene.h">
+      <Filter>Base\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -110,41 +182,86 @@
     <ClCompile Include="DeviceResources.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="Game\CommonResources.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Libraries\Microsoft\DebugDraw.cpp">
       <Filter>Libraries\Microsoft</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Scene\TitleScene.cpp">
-      <Filter>Game\Scene</Filter>
+    <ClCompile Include="Libraries\imgui\imgui.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Scene\PlayScene.cpp">
-      <Filter>Game\Scene</Filter>
+    <ClCompile Include="Libraries\imgui\imgui_draw.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Scene\SceneManager.cpp">
-      <Filter>Game\Scene</Filter>
+    <ClCompile Include="Libraries\imgui\imgui_impl_dx11.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\GameResources.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Libraries\imgui\imgui_impl_win32.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\ShaderManager.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Libraries\imgui\imgui_ja_gryph_ranges.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\Singleton.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Libraries\imgui\imgui_tables.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\DebugCamera.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Libraries\imgui\imgui_widgets.cpp">
+      <Filter>Libraries\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\DebugString.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Base\Scene\Scene.cpp">
+      <Filter>Base\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\InputManager.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Base\Scene\SceneManager.cpp">
+      <Filter>Base\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Mylib\Model3D.cpp">
-      <Filter>Game\Mylib</Filter>
+    <ClCompile Include="Base\Scene\SceneState.cpp">
+      <Filter>Base\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Object\Object.cpp">
+      <Filter>Base\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Component\Component.cpp">
+      <Filter>Base\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Component\Transform\Transform.cpp">
+      <Filter>Base\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\CommonResources.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Object\UnbreakableManager.cpp">
+      <Filter>Base\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Mylib\DebugString.cpp">
+      <Filter>Base\Mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Mylib\InputManager.cpp">
+      <Filter>Base\Mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Mylib\Singleton.cpp">
+      <Filter>Base\Mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Resources\GameResources.cpp">
+      <Filter>Base\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Resources\ShaderManager.cpp">
+      <Filter>Base\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Event\EventManager.cpp">
+      <Filter>Base\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Event\Observer.cpp">
+      <Filter>Base\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Event\Subject.cpp">
+      <Filter>Base\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Camera\Camera.cpp">
+      <Filter>Base\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Camera\DebugCamera.cpp">
+      <Filter>Base\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Scene\DebugScene.cpp">
+      <Filter>Base\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,16 +279,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Game\Shader\Model.hlsli">
-      <Filter>Game\Shader</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Game\Shader\ModelPS.hlsl">
-      <Filter>Game\Shader</Filter>
-    </FxCompile>
-    <FxCompile Include="Game\Shader\ModelVS.hlsl">
-      <Filter>Game\Shader</Filter>
-    </FxCompile>
   </ItemGroup>
 </Project>

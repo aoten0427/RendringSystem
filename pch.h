@@ -51,6 +51,7 @@
 #include <system_error>
 #include <tuple>
 #include <unordered_map>
+#include <unordered_set>
 
 #ifdef _DEBUG
 #include <dxgidebug.h>
