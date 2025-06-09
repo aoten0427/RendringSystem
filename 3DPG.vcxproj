@@ -76,12 +76,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <MultiProcFXC>false</MultiProcFXC>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <MultiProcFXC>false</MultiProcFXC>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -128,6 +130,7 @@
     </Manifest>
     <FxCompile>
       <ObjectFileOutput>Resources\Shaders\%(Filename).cso</ObjectFileOutput>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -183,24 +186,46 @@
     </Manifest>
     <FxCompile>
       <ObjectFileOutput>Resources\Shaders\%(Filename).cso</ObjectFileOutput>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Base\Camera\Camera.h" />
     <ClInclude Include="Base\Camera\DebugCamera.h" />
     <ClInclude Include="Base\CommonResources.h" />
     <ClInclude Include="Base\Component\Component.h" />
+    <ClInclude Include="Base\Component\Model\Model3D.h" />
     <ClInclude Include="Base\Component\Transform\Transform.h" />
     <ClInclude Include="Base\Event\EventManager.h" />
     <ClInclude Include="Base\Event\IObserver.h" />
     <ClInclude Include="Base\Event\ISubject.h" />
     <ClInclude Include="Base\Event\Observer.h" />
     <ClInclude Include="Base\Event\Subject.h" />
+    <ClInclude Include="Base\Mylib\ConstantBuffer.h" />
     <ClInclude Include="Base\Mylib\DebugString.h" />
+    <ClInclude Include="Base\Mylib\DebugTimer.h" />
     <ClInclude Include="Base\Mylib\InputManager.h" />
+    <ClInclude Include="Base\Mylib\Log.h" />
     <ClInclude Include="Base\Mylib\Singleton.h" />
     <ClInclude Include="Base\Object\Object.h" />
+    <ClInclude Include="Base\Object\TestObject.h" />
     <ClInclude Include="Base\Object\UnbreakableManager.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\IInstancing.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\IMaterial.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\InstancingMaterial.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\Material.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\MaterialFactory.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\MaterialManager.h" />
+    <ClInclude Include="Base\RenderingSystem\Material\NormalMaterial\NormalMaterial.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderData\RenderDatas.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingConfig.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingPass\ForwardRenderingPass.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingPass\IRenderingPass.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingStrategy\InstancingRenderStrategy.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingStrategy\IRenderingStrategy.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingStrategy\StandardRenderStrategy.h" />
+    <ClInclude Include="Base\RenderingSystem\RenderingSystem.h" />
     <ClInclude Include="Base\Resources\GameResources.h" />
     <ClInclude Include="Base\Resources\ReadData.h" />
     <ClInclude Include="Base\Resources\ShaderManager.h" />
@@ -230,15 +255,34 @@
     <ClCompile Include="Base\Camera\DebugCamera.cpp" />
     <ClCompile Include="Base\CommonResources.cpp" />
     <ClCompile Include="Base\Component\Component.cpp" />
+    <ClCompile Include="Base\Component\Model\Model3D.cpp" />
     <ClCompile Include="Base\Component\Transform\Transform.cpp" />
     <ClCompile Include="Base\Event\EventManager.cpp" />
     <ClCompile Include="Base\Event\Observer.cpp" />
     <ClCompile Include="Base\Event\Subject.cpp" />
+    <ClCompile Include="Base\Mylib\ConstantBuffer.cpp" />
     <ClCompile Include="Base\Mylib\DebugString.cpp" />
+    <ClCompile Include="Base\Mylib\DebugTimer.cpp" />
     <ClCompile Include="Base\Mylib\InputManager.cpp" />
+    <ClCompile Include="Base\Mylib\Log.cpp" />
     <ClCompile Include="Base\Mylib\Singleton.cpp" />
     <ClCompile Include="Base\Object\Object.cpp" />
+    <ClCompile Include="Base\Object\TestObject.cpp" />
     <ClCompile Include="Base\Object\UnbreakableManager.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\IInstancing.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\IMaterial.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\InstancingMaterial.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\Material.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\MaterialFactory.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\MaterialManager.cpp" />
+    <ClCompile Include="Base\RenderingSystem\Material\NormalMaterial\NormalMaterial.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderData\RenderDatas.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderingPass\ForwardRenderingPass.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderingPass\IRenderingPass.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderingStrategy\InstancingRenderStrategy.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderingStrategy\IRenderingStrategy.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderingStrategy\StandardRenderStrategy.cpp" />
+    <ClCompile Include="Base\RenderingSystem\RenderingSystem.cpp" />
     <ClCompile Include="Base\Resources\GameResources.cpp" />
     <ClCompile Include="Base\Resources\ShaderManager.cpp" />
     <ClCompile Include="Base\Scene\DebugScene.cpp" />
@@ -276,7 +320,24 @@
     <Manifest Include="settings.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Base\RenderingSystem\Shaders\Common.hlsli" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Base\RenderingSystem\Shaders\InstancingBasicVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Base\RenderingSystem\Shaders\NormalMaterialPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Base\RenderingSystem\Shaders\NormalMaterialVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

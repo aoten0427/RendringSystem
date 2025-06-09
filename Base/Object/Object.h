@@ -16,19 +16,6 @@ class Collider;
 //オブジェクトタグ
 enum class ObjectTag
 {
-	Player,
-	Stage,
-	ClearStage,
-	Target,
-	Search,
-	TargetBox,
-	Enemy,
-	Goal,
-	Coin,
-	Help,
-	Spike,
-	Laser,
-	Barrier,
 	Other
 };
 

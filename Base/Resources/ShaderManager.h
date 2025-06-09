@@ -35,21 +35,6 @@ enum class ShaderType {
 	ComputeShader
 };
 
-/// <summary>
-/// シェーダ使用時にまとまり
-/// </summary>
-struct ShaderSet
-{
-	//定数バッファ
-	Microsoft::WRL::ComPtr<ID3D11Buffer>	cBuffer;
-	//	入力レイアウト
-	Microsoft::WRL::ComPtr<ID3D11InputLayout> inputLayout;
-	//	頂点シェーダ
-	Microsoft::WRL::ComPtr<ID3D11VertexShader> vertexShader;
-	//	ピクセルシェーダ
-	Microsoft::WRL::ComPtr<ID3D11PixelShader> pixelShader;
-};
-
 
 class ShaderManager
 {
@@ -160,7 +145,8 @@ public:
 	template<typename T>
 	static	Microsoft::WRL::ComPtr<ID3D11Buffer> CreateConstantBuffer(ID3D11Device* device,
 		D3D11_USAGE usage = D3D11_USAGE_DEFAULT,
-		D3D11_BIND_FLAG bindflag = D3D11_BIND_CONSTANT_BUFFER
+		D3D11_BIND_FLAG bindflag = D3D11_BIND_CONSTANT_BUFFER,
+		D3D11_CPU_ACCESS_FLAG accessFlag = 0
 		) {
 		Microsoft::WRL::ComPtr<ID3D11Buffer> constantBuffer;
 

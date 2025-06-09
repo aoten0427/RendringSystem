@@ -11,6 +11,7 @@ class CommonResources;
 class Object;
 class Camera;
 class Canvas;
+class RenderingSystem;
 
 
 class SceneState;
@@ -43,6 +44,8 @@ public:
 	std::string GetName()const { return m_name; }
 	//コモンリソース取得
 	CommonResources* GetCommonResources()const { return m_commonResources; }
+	//描画システム取得
+	RenderingSystem* GetRenderingSystem()const { return m_renderingSystem.get(); }
 	//カメラ取得
 	virtual Camera* GetCamera()const = 0;
 	//オブジェクト削除フラグオン
@@ -58,6 +61,8 @@ private:
 	std::vector<std::unique_ptr<Object>> m_objects;
 	//保留オブジェクト
 	std::vector<std::unique_ptr<Object>> m_pendingObjects;
+	//描画システム
+	std::unique_ptr<RenderingSystem> m_renderingSystem;
 	//アップデート確認
 	bool m_updating;
 	//オブジェクト削除フラグ

@@ -12,6 +12,8 @@
 #include "Base/Object/UnbreakableManager.h"
 #include "Base/Scene/SceneState.h"
 #include "Base/Camera/Camera.h"
+#include "Base/RenderingSystem/RenderingSystem.h"
+#include "Base/Mylib/DebugTimer.h"
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
@@ -35,6 +37,7 @@ Scene::Scene(CommonResources* resources,std::string name)
 	auto device = m_commonResources->GetDeviceResources()->GetD3DDevice();
 	auto context = m_commonResources->GetDeviceResources()->GetD3DDeviceContext();
 	//各マネージャー生成
+	m_renderingSystem = std::make_unique<RenderingSystem>(device);
 	//ステート作成
 	m_state = AddObject<SceneState>(this);
 }
@@ -109,7 +112,13 @@ void Scene::Update(float deltaTime)
 /// </summary>
 void Scene::Render()
 {
-
+	{
+		DebugTimer dt{ "描画" };
+		auto context = m_commonResources->GetDeviceResources()->GetD3DDeviceContext();
+		auto states = m_commonResources->GetCommonStates();
+		m_renderingSystem->Render(context, states, *GetCamera());
+	}
+	
 }
 
 /// <summary>

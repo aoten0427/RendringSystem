@@ -62,6 +62,30 @@
     <Filter Include="Base\Camera">
       <UniqueIdentifier>{a84c735d-a03e-4c78-8c7a-b0a2782e98b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Base\RenderingSystem">
+      <UniqueIdentifier>{5e489804-dc14-46f7-88d3-c506bf830924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderingSystem\RenderingPass">
+      <UniqueIdentifier>{df2b379e-1e8d-427a-82bf-aa72360600f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderingSystem\RenderingStrategy">
+      <UniqueIdentifier>{03ae41b4-d86e-41e5-b9fe-a8164e8101dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderingSystem\Material">
+      <UniqueIdentifier>{226ae626-ea4b-4480-a8ba-95746979d34b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderingSystem\Material\NormalMaterial">
+      <UniqueIdentifier>{ac332c3f-b0b2-462f-818b-618a66706f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderingSystem\Shaders">
+      <UniqueIdentifier>{952a43a9-bd22-492a-a97e-658b7d87dde2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Component\Model">
+      <UniqueIdentifier>{caa4a901-c5ce-4f0b-9e05-e7e1767bbd5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderingSystem\RenderData">
+      <UniqueIdentifier>{fdbf6776-ee3c-467a-b5cb-f945014719af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -174,6 +198,69 @@
     <ClInclude Include="Base\Scene\DebugScene.h">
       <Filter>Base\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingSystem.h">
+      <Filter>Base\RenderingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingPass\IRenderingPass.h">
+      <Filter>Base\RenderingSystem\RenderingPass</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingStrategy\IRenderingStrategy.h">
+      <Filter>Base\RenderingSystem\RenderingStrategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\IMaterial.h">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingConfig.h">
+      <Filter>Base\RenderingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\Material.h">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Mylib\ConstantBuffer.h">
+      <Filter>Base\Mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\NormalMaterial\NormalMaterial.h">
+      <Filter>Base\RenderingSystem\Material\NormalMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Object\TestObject.h">
+      <Filter>Base\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Component\Model\Model3D.h">
+      <Filter>Base\Component\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingStrategy\StandardRenderStrategy.h">
+      <Filter>Base\RenderingSystem\RenderingStrategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Mylib\Log.h">
+      <Filter>Base\Mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\MaterialManager.h">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\MaterialFactory.h">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Base.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderData\RenderDatas.h">
+      <Filter>Base\RenderingSystem\RenderData</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingPass\ForwardRenderingPass.h">
+      <Filter>Base\RenderingSystem\RenderingPass</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\RenderingStrategy\InstancingRenderStrategy.h">
+      <Filter>Base\RenderingSystem\RenderingStrategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Mylib\DebugTimer.h">
+      <Filter>Base\Mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\IInstancing.h">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RenderingSystem\Material\InstancingMaterial.h">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -263,6 +350,63 @@
     <ClCompile Include="Base\Scene\DebugScene.cpp">
       <Filter>Base\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderingSystem.cpp">
+      <Filter>Base\RenderingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderingPass\IRenderingPass.cpp">
+      <Filter>Base\RenderingSystem\RenderingPass</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderingStrategy\IRenderingStrategy.cpp">
+      <Filter>Base\RenderingSystem\RenderingStrategy</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\IMaterial.cpp">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\Material.cpp">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Mylib\ConstantBuffer.cpp">
+      <Filter>Base\Mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\NormalMaterial\NormalMaterial.cpp">
+      <Filter>Base\RenderingSystem\Material\NormalMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Object\TestObject.cpp">
+      <Filter>Base\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Component\Model\Model3D.cpp">
+      <Filter>Base\Component\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderingStrategy\StandardRenderStrategy.cpp">
+      <Filter>Base\RenderingSystem\RenderingStrategy</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Mylib\Log.cpp">
+      <Filter>Base\Mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\MaterialManager.cpp">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\MaterialFactory.cpp">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderData\RenderDatas.cpp">
+      <Filter>Base\RenderingSystem\RenderData</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderingPass\ForwardRenderingPass.cpp">
+      <Filter>Base\RenderingSystem\RenderingPass</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\RenderingStrategy\InstancingRenderStrategy.cpp">
+      <Filter>Base\RenderingSystem\RenderingStrategy</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Mylib\DebugTimer.cpp">
+      <Filter>Base\Mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\IInstancing.cpp">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RenderingSystem\Material\InstancingMaterial.cpp">
+      <Filter>Base\RenderingSystem\Material</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -279,5 +423,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Base\RenderingSystem\Shaders\Common.hlsli">
+      <Filter>Base\RenderingSystem\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Base\RenderingSystem\Shaders\NormalMaterialVS.hlsl">
+      <Filter>Base\RenderingSystem\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Base\RenderingSystem\Shaders\NormalMaterialPS.hlsl">
+      <Filter>Base\RenderingSystem\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Base\RenderingSystem\Shaders\InstancingBasicVS.hlsl">
+      <Filter>Base\RenderingSystem\Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

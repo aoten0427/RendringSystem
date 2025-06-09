@@ -1,0 +1,8 @@
+#include"DeviceResources.h"
+#include"CommonResources.h"
+#include"Scene/Scene.h"
+#include"Component/Transform/Transform.h"
+#include"Component/Model/Model3D.h"
+#include"Object/Object.h"
+#include"Scene/Scene.h"
+#include"RenderingSystem/Material/MaterialFactory.h"
